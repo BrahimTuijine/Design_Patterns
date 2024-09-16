@@ -12,11 +12,11 @@ void main(List<String> args) {
 
   request = Request(RequestType.purchase, 1000);
 
-  ramzi.handleRequest(request);
+  bilel.handleRequest(request);
 
   request = Request(RequestType.purchase, 5000);
 
-  brahim.handleRequest(request);
+  bilel.handleRequest(request);
 }
 
 enum RequestType { conference, purchase }
@@ -53,9 +53,9 @@ class VP extends Handler {
     if (request.requestType == RequestType.purchase) {
       if (request.amount < 1500) {
         print("VP can Approye budget « 1500");
+      } else {
+        accessor?.handleRequest(request);
       }
-    } else {
-      accessor?.handleRequest(request);
     }
   }
 }
