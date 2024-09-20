@@ -1,24 +1,3 @@
-void main(List<String> args) {
-  final bilel = Director();
-  final ramzi = VP();
-  final brahim = CEO();
-
-  bilel.accessor = ramzi;
-  ramzi.accessor = brahim;
-
-  Request request = Request(RequestType.conference, 500);
-
-  bilel.handleRequest(request);
-
-  request = Request(RequestType.purchase, 1000);
-
-  bilel.handleRequest(request);
-
-  request = Request(RequestType.purchase, 5000);
-
-  bilel.handleRequest(request);
-}
-
 enum RequestType { conference, purchase }
 
 class Request {
@@ -65,4 +44,25 @@ class CEO extends Handler {
   void handleRequest(Request request) {
     print("CEO can Approve Everything");
   }
+}
+
+void main(List<String> args) {
+  final bilel = Director();
+  final ramzi = VP();
+  final brahim = CEO();
+
+  bilel.accessor = ramzi;
+  ramzi.accessor = brahim;
+
+  Request request = Request(RequestType.conference, 500);
+
+  bilel.handleRequest(request);
+
+  request = Request(RequestType.purchase, 1000);
+
+  bilel.handleRequest(request);
+
+  request = Request(RequestType.purchase, 5000);
+
+  bilel.handleRequest(request);
 }
